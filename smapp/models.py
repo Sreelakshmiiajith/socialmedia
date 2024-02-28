@@ -3,9 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Uprofile(models.Model):
-    uname=models.OneToOneField(User,max_length=200)
-    email=models.EmailField(unique=True)
-    password=models.CharField(max_length=200)
+    uname=models.OneToOneField(User,on_delete=models.CASCADE)
     propic=models.ImageField()
     dob=models.PositiveIntegerField()
     bio=models.CharField(max_length=100)
